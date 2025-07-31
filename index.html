@@ -1,4 +1,3 @@
-<!-- Replace your index.html with this version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,6 +77,7 @@
 
     .intro-text {
       flex: 1;
+      margin-top: 3rem;
     }
 
     .intro-text p {
@@ -88,8 +88,6 @@
     .intro-text strong {
       font-weight: 700;
       font-size: 2rem;
-      display: block;
-      margin-bottom: 1rem;
     }
 
     .intro-photo {
@@ -169,6 +167,16 @@
       transition: background 0.3s ease;
     }
 
+    .carousel-buttons button::before {
+      content: '';
+      display: inline-block;
+      border: solid white;
+      border-width: 0 4px 4px 0;
+      padding: 6px;
+      transform: rotate(45deg);
+      margin-right: 5px;
+    }
+
     .carousel-buttons button:hover {
       background: rgba(0, 0, 0, 0.4);
     }
@@ -213,17 +221,14 @@
       <li><a href="articles.html">Articles</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="mailto:placeholder@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/maildotru.svg" alt="Email icon"></a></li>
+      <li><a href="mailto:placeholder@example.com"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email icon"></a></li>
       <li><a href="https://instagram.com/placeholder" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram icon"></a></li>
     </ul>
   </nav>
 
   <main>
     <div class="intro-text">
-      <p>
-        <strong>I’m Lina Elsaadi, a multimedia journalist.</strong>
-        I specialize in bringing complex stories to life across multiple platforms. Based in Red Deer, working globally.
-      </p>
+      <p><strong>I’m Lina Elsaadi, a multimedia journalist.</strong> I specialize in bringing complex stories to life across multiple platforms. Based in Red Deer, working globally.</p>
     </div>
     <div class="intro-photo">
       <img src="https://via.placeholder.com/400x500?text=Your+Photo+Here" alt="Lina Elsaadi photo">
@@ -253,11 +258,14 @@
           <img src="https://via.placeholder.com/600x220?text=Photo+5" alt="Photo 5">
           <div class="carousel-caption">Caption for photo 5</div>
         </div>
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+6" alt="Photo 6">
+          <div class="carousel-caption">Caption for photo 6</div>
+        </div>
       </div>
-
       <div class="carousel-buttons">
-        <button id="prevBtn">&#10148;</button>
-        <button id="nextBtn">&#10148;</button>
+        <button id="prevBtn"></button>
+        <button id="nextBtn"></button>
       </div>
     </div>
   </section>
