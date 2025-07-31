@@ -42,7 +42,8 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
+      align-items: center;
     }
 
     nav ul li a {
@@ -57,11 +58,18 @@
       color: #000;
     }
 
+    nav ul li img {
+      width: 20px;
+      height: 20px;
+    }
+
     main {
       padding-top: 120px;
       max-width: 1000px;
       margin: 0 auto;
       padding-bottom: 4rem;
+      text-align: right;
+      padding-right: 2rem;
     }
 
     footer {
@@ -95,13 +103,14 @@
 
     .carousel-slide img {
       width: 100%;
-      height: auto;
+      height: 220px;
+      object-fit: cover;
       border-radius: 8px;
       display: block;
     }
 
     .carousel-caption {
-      text-align: center;
+      text-align: right;
       padding: 0.5rem;
       font-size: 0.9rem;
       color: #555;
@@ -120,25 +129,34 @@
 
     .carousel-buttons button {
       pointer-events: all;
-      background: #000;
+      background: rgba(0, 0, 0, 0.3);
       border: none;
       color: white;
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      opacity: 0.7;
       transition: opacity 0.3s ease;
     }
 
     .carousel-buttons button:hover {
-      opacity: 1;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 768px) {
       .carousel-slide {
         flex: 0 0 80%;
+      }
+
+      main {
+        text-align: left;
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+
+      .carousel-caption {
+        text-align: left;
       }
     }
   </style>
@@ -153,41 +171,42 @@
       <li><a href="articles.html">Articles</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="mailto:placeholder@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/maildotru.svg" alt="Email icon"></a></li>
+      <li><a href="https://instagram.com/placeholder" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/instagram.svg" alt="Instagram icon"></a></li>
     </ul>
   </nav>
 
   <main>
-    <h1 style="text-align: center; margin-top: 2rem;">Welcome to my journalism portfolio.</h1>
-    <p style="text-align: center; margin-top: 1rem;">Explore my work across audio, photography, and written stories.</p>
+    <p style="font-size: 1.2rem;">I’m Lina Elsaadi, a multimedia journalist. I specialize in bringing complex stories to life across multiple platforms. Based in Red Deer, working globally.</p>
   </main>
 
   <section class="carousel-container">
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/400x250?text=Photo+1" alt="Photo 1">
+        <img src="https://via.placeholder.com/600x220?text=Photo+1" alt="Photo 1">
         <div class="carousel-caption">Caption for photo 1</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/400x250?text=Photo+2" alt="Photo 2">
+        <img src="https://via.placeholder.com/600x220?text=Photo+2" alt="Photo 2">
         <div class="carousel-caption">Caption for photo 2</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/400x250?text=Photo+3" alt="Photo 3">
+        <img src="https://via.placeholder.com/600x220?text=Photo+3" alt="Photo 3">
         <div class="carousel-caption">Caption for photo 3</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/400x250?text=Photo+4" alt="Photo 4">
+        <img src="https://via.placeholder.com/600x220?text=Photo+4" alt="Photo 4">
         <div class="carousel-caption">Caption for photo 4</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/400x250?text=Photo+5" alt="Photo 5">
+        <img src="https://via.placeholder.com/600x220?text=Photo+5" alt="Photo 5">
         <div class="carousel-caption">Caption for photo 5</div>
       </div>
     </div>
 
     <div class="carousel-buttons">
-      <button id="prevBtn">&#10094;</button>
-      <button id="nextBtn">&#10095;</button>
+      <button id="prevBtn">&#x276E;</button>
+      <button id="nextBtn">&#x276F;</button>
     </div>
   </section>
 
@@ -202,7 +221,6 @@
     const nextBtn = document.getElementById('nextBtn');
 
     let index = 0;
-    const visibleSlides = 3;
 
     function updateCarousel() {
       const slideWidth = slides[0].offsetWidth;
@@ -223,7 +241,6 @@
     prevBtn.addEventListener('click', showPrev);
     window.addEventListener('resize', updateCarousel);
 
-    // Initial setup
     updateCarousel();
   </script>
 </body>
