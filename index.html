@@ -75,33 +75,33 @@
     /* Carousel Styles */
     .carousel-container {
       position: relative;
-      margin: 3rem auto;
-      max-width: 1000px;
+      width: 100%;
       overflow: hidden;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      background: #f7f7f7;
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease;
-      padding-left: 5%;
     }
 
     .carousel-slide {
-      flex: 0 0 30%;
-      margin-right: 2%;
-      background: #f9f9f9;
-      text-align: center;
-      border-radius: 8px;
-      overflow: hidden;
+      flex: 0 0 33.3333%;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
     }
 
     .carousel-slide img {
       width: 100%;
       height: auto;
+      border-radius: 8px;
       display: block;
     }
 
     .carousel-caption {
+      text-align: center;
       padding: 0.5rem;
       font-size: 0.9rem;
       color: #555;
@@ -115,6 +115,7 @@
       justify-content: space-between;
       transform: translateY(-50%);
       pointer-events: none;
+      padding: 0 1rem;
     }
 
     .carousel-buttons button {
@@ -161,25 +162,25 @@
   </main>
 
   <section class="carousel-container">
-    <div class="carousel-track">
+    <div class="carousel-track" id="carouselTrack">
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Photo 1">
+        <img src="https://via.placeholder.com/400x250?text=Photo+1" alt="Photo 1">
         <div class="carousel-caption">Caption for photo 1</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Photo 2">
+        <img src="https://via.placeholder.com/400x250?text=Photo+2" alt="Photo 2">
         <div class="carousel-caption">Caption for photo 2</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Photo 3">
+        <img src="https://via.placeholder.com/400x250?text=Photo+3" alt="Photo 3">
         <div class="carousel-caption">Caption for photo 3</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/300x200?text=Photo+4" alt="Photo 4">
+        <img src="https://via.placeholder.com/400x250?text=Photo+4" alt="Photo 4">
         <div class="carousel-caption">Caption for photo 4</div>
       </div>
       <div class="carousel-slide">
-        <img src="https://via.placeholder.com/300x200?text=Photo+5" alt="Photo 5">
+        <img src="https://via.placeholder.com/400x250?text=Photo+5" alt="Photo 5">
         <div class="carousel-caption">Caption for photo 5</div>
       </div>
     </div>
@@ -195,33 +196,35 @@
   </footer>
 
   <script>
-    const track = document.querySelector('.carousel-track');
+    const track = document.getElementById('carouselTrack');
     const slides = document.querySelectorAll('.carousel-slide');
-    const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
     let index = 0;
     const visibleSlides = 3;
 
     function updateCarousel() {
-      const slideWidth = slides[0].offsetWidth + 16;
+      const slideWidth = slides[0].offsetWidth;
       track.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-    nextBtn.addEventListener('click', () => {
-      if (index < slides.length - visibleSlides) {
-        index++;
-        updateCarousel();
-      }
-    });
+    function showNext() {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }
 
-    prevBtn.addEventListener('click', () => {
-      if (index > 0) {
-        index--;
-        updateCarousel();
-      }
-    });
+    function showPrev() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
 
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
     window.addEventListener('resize', updateCarousel);
+
+    // Initial setup
+    updateCarousel();
   </script>
 </body>
 </html>
