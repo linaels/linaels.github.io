@@ -1,3 +1,4 @@
+<!-- Replace your index.html with this version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,40 +66,67 @@
 
     main {
       padding-top: 120px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
       padding-bottom: 4rem;
-      text-align: right;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      padding-left: 2rem;
       padding-right: 2rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.9rem;
-      border-top: 1px solid #eee;
+    .intro-text {
+      flex: 1;
     }
 
-    /* Carousel Styles */
+    .intro-text p {
+      font-size: 1.6rem;
+      text-align: left;
+    }
+
+    .intro-text strong {
+      font-weight: 700;
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .intro-photo {
+      flex: 1;
+      text-align: right;
+    }
+
+    .intro-photo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
     .carousel-container {
-      position: relative;
       width: 100%;
+      background: #fff;
+      padding: 3rem 0;
+      position: relative;
       overflow: hidden;
-      margin-top: 4rem;
-      padding: 2rem 0;
-      background: #f7f7f7;
+    }
+
+    .carousel-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease;
+      padding: 0 5%;
     }
 
     .carousel-slide {
-      flex: 0 0 33.3333%;
-      padding: 0 0.5rem;
-      box-sizing: border-box;
+      flex: 0 0 33.333%;
+      margin: 0 1%;
+      transition: transform 0.3s ease;
     }
 
     .carousel-slide img {
@@ -111,7 +139,7 @@
 
     .carousel-caption {
       text-align: right;
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       font-size: 0.9rem;
       color: #555;
     }
@@ -119,40 +147,54 @@
     .carousel-buttons {
       position: absolute;
       top: 50%;
-      width: 100%;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
+      padding: 0 2rem;
       pointer-events: none;
-      padding: 0 1rem;
     }
 
     .carousel-buttons button {
-      pointer-events: all;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.2);
       border: none;
       color: white;
+      font-size: 2rem;
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      font-size: 1.8rem;
       cursor: pointer;
-      transition: opacity 0.3s ease;
+      pointer-events: all;
+      transition: background 0.3s ease;
     }
 
     .carousel-buttons button:hover {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
     }
 
     @media (max-width: 768px) {
-      .carousel-slide {
-        flex: 0 0 80%;
+      main {
+        flex-direction: column;
+        text-align: left;
       }
 
-      main {
-        text-align: left;
-        padding-right: 1rem;
-        padding-left: 1rem;
+      .intro-photo {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .carousel-slide {
+        flex: 0 0 80%;
+        margin: 0 10%;
       }
 
       .carousel-caption {
@@ -177,36 +219,46 @@
   </nav>
 
   <main>
-    <p style="font-size: 1.2rem;">I’m Lina Elsaadi, a multimedia journalist. I specialize in bringing complex stories to life across multiple platforms. Based in Red Deer, working globally.</p>
+    <div class="intro-text">
+      <p>
+        <strong>I’m Lina Elsaadi, a multimedia journalist.</strong>
+        I specialize in bringing complex stories to life across multiple platforms. Based in Red Deer, working globally.
+      </p>
+    </div>
+    <div class="intro-photo">
+      <img src="https://via.placeholder.com/400x500?text=Your+Photo+Here" alt="Lina Elsaadi photo">
+    </div>
   </main>
 
   <section class="carousel-container">
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/600x220?text=Photo+1" alt="Photo 1">
-        <div class="carousel-caption">Caption for photo 1</div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+1" alt="Photo 1">
+          <div class="carousel-caption">Caption for photo 1</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+2" alt="Photo 2">
+          <div class="carousel-caption">Caption for photo 2</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+3" alt="Photo 3">
+          <div class="carousel-caption">Caption for photo 3</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+4" alt="Photo 4">
+          <div class="carousel-caption">Caption for photo 4</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://via.placeholder.com/600x220?text=Photo+5" alt="Photo 5">
+          <div class="carousel-caption">Caption for photo 5</div>
+        </div>
       </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/600x220?text=Photo+2" alt="Photo 2">
-        <div class="carousel-caption">Caption for photo 2</div>
-      </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/600x220?text=Photo+3" alt="Photo 3">
-        <div class="carousel-caption">Caption for photo 3</div>
-      </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/600x220?text=Photo+4" alt="Photo 4">
-        <div class="carousel-caption">Caption for photo 4</div>
-      </div>
-      <div class="carousel-slide">
-        <img src="https://via.placeholder.com/600x220?text=Photo+5" alt="Photo 5">
-        <div class="carousel-caption">Caption for photo 5</div>
-      </div>
-    </div>
 
-    <div class="carousel-buttons">
-      <button id="prevBtn">&#x276E;</button>
-      <button id="nextBtn">&#x276F;</button>
+      <div class="carousel-buttons">
+        <button id="prevBtn">&#10148;</button>
+        <button id="nextBtn">&#10148;</button>
+      </div>
     </div>
   </section>
 
@@ -223,7 +275,7 @@
     let index = 0;
 
     function updateCarousel() {
-      const slideWidth = slides[0].offsetWidth;
+      const slideWidth = slides[0].offsetWidth + (slides[0].offsetLeft - slides[0].parentElement.offsetLeft);
       track.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
